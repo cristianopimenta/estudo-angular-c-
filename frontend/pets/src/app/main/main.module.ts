@@ -7,19 +7,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from '../app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     MainRoutingModule,
     LoginComponent,
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
 
   providers: [],
-  bootstrap: [AppComponent]
+  
 })
 export class MainModule { }

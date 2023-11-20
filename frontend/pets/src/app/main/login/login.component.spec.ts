@@ -25,36 +25,3 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-
-@Component({
-
-  selector:'app-login',
-
-  templateUrl:'./login.component.html',
-
-  styleUrls: ['./login.component.css']
-
-}):
-
-export class loginComponent {form;
-
-  constructor(privateformBuilder:FormBuilder) {
-
-      this.criarForm();
-
-  }
-
-  criarForm(){
-
-      this.form = this.formBuilder.group({
-
-          email: [''],
-
-          senha: ['']
-
-      })
-
-  }
-
-}

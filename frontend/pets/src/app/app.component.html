@@ -1,2 +1,56 @@
 <h3>Pets</h3>
-<button>Obter Todos</button>
+
+<tbody>
+<tr *ngfor="let pet of pets">
+<td>{{pet.Id_Vacinacao}}</td>
+<td>{{pet.Data_Aplicacao}}</td>
+<td>{{pet.Reacoes}}</td>
+</tr>
+</tbody>
+<button >Obter Todos</button>
+
+
+<div class="container">
+    <form>
+      <div>
+        <label>Id</label>
+        <input type="text" disabled [(ngModel)]="VaciId" name="VaciId">
+      </div>
+      
+      <div>
+        <label>Nome Vacina</label>
+        <input type="text" [(ngModel)]="Nome_Vacina" name="nomevacina">
+      </div>
+      
+      <div>
+        <label>Quantidade</label>
+        <input type="text" [(ngModel)]="Quantidade" name="quantidade">
+      </div>
+      
+      <button (click)="buttonClick()"> 
+        {{ id ? 'Salvar' : 'Criar' }}  
+      </button>
+    </form>
+    
+    <table>
+      <thead>
+        <th> Id </th>
+        <th> Nome Vacina </th>
+        <th> Quantidade </th>
+        <th> ... </th>
+      </thead>
+    
+      <tbody>
+        <tr *ngFor="let estoquevacina of estoquevacinas$ | async">
+          <td> {{ estoquevacina.VaciId }} </td>
+          <td> {{ estoquevacina.nome_vacina }} </td>
+          <td> {{ estoquevacina.quantidade }} </td>
+          <td> 
+            <span (click)="preencherCampos(estoquevacina)" > alterar </span> 
+            <span (click)="remover(estoquevacina.VaciId!)" > remover </span> 
+          </td>
+        </tr>
+  
+      </tbody>
+    </table>
+  </div>
