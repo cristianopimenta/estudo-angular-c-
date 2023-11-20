@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 10%;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para a mensagem de sucesso */
+.login-success {
+  font-size: 18px; /* Tamanho da fonte para a mensagem de sucesso */
+  font-weight: bold; /* Adiciona negrito à mensagem de erro */
+  color: #008B45 /* Cor para a mensagem de sucesso */
+}
+
+/* Estilos para a mensagem de erro */
+.login-error {
+  font-size: 18px; /* Tamanho da fonte para a mensagem de erro */
+  font-weight: bold; /* Adiciona negrito à mensagem de erro */
+  color: red; /* Cor para a mensagem de erro */
+}
+
+
