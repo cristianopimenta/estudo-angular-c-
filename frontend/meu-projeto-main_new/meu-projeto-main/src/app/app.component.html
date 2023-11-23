@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+
+<button type="button" class="menu-button" (click)="drawer.toggle()">
+Menu
+</button>
+
+<mat-drawer-container class="example-container" autosize>
+<mat-drawer #drawer class="example-sidenav" mode="side">
+
+<!--Lista do Menu-->
+
+        <mat-list class="list">
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="home" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                <span> Home</span>
+            </mat-list-item>
+
+            <!--mat-list-item (click)="drawer.toggle()" routerLink="opcoes" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="menu_book"></mat-icon>
+                <span>Menu Principal</span>
+            </mat-list-item> -->
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="dono" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="place"></mat-icon>
+                <span> Dados Tutor</span>
+            </mat-list-item>
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="pet" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="pets"></mat-icon>
+                <span> Dados Pet</span>
+            </mat-list-item>
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="meus-pets" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="pets"></mat-icon>
+                <span> Meus Pets</span>
+            </mat-list-item>
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="contact" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="email"></mat-icon>
+                <span> Contato</span>
+            </mat-list-item>
+
+            <!--mat-list-item (click)="drawer.toggle()" routerLink="agendamento" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="calendar_month"></mat-icon>
+                <span>Agendamento</span>
+            </mat-list-item> -->
+
+            <mat-list-item (click)="toggleAgendamentoMenu()">
+              <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="calendar_month"></mat-icon>
+              <span> Agendamento</span>
+              <mat-icon class="submenu-icon" [ngClass]="{ 'rotate-icon': isAgendamentoMenuOpen }" aria-hidden="false" aria-label="Expand submenu" fontIcon="arrow_drop_down"></mat-icon>
+            </mat-list-item>
+
+            <mat-nav-list *ngIf="isAgendamentoMenuOpen">
+              <div class="vertical-menu">
+                <ul>
+                  <li>
+                    <button mat-button (click)="navigateTo('vacina')">
+                      <mat-icon aria-hidden="false" aria-label="Icon">vaccines</mat-icon>
+                      Vacinas
+                    </button>
+                  </li>
+                  <li>
+                    <button mat-button (click)="navigateTo('consultas')">
+                      <mat-icon aria-hidden="false" aria-label="Icon">local_hospital</mat-icon>
+                      Consultas
+                    </button>
+                  </li>
+                  <li>
+                    <button mat-button (click)="navigateTo('banhoetosa')">
+                      <mat-icon aria-hidden="false" aria-label="Icon">bathtub</mat-icon>
+                      Banho e Tosa
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </mat-nav-list>
+
+
+            <!--mat-list-item (click)="drawer.toggle()" routerLink="vacina" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="vaccines"></mat-icon>
+                <span>Vacinas</span>
+            </mat-list-item>
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="consultas" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="health_and_safety"></mat-icon>
+                <span>Consultas</span>
+            </mat-list-item>
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="banhoetosa" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example contact icon" fontIcon="shower"></mat-icon>
+                <span>Banho e Tosa</span>
+            </mat-list-item> -->
+
+            <mat-list-item (click)="drawer.toggle()" routerLink="login" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Login" fontIcon="login"></mat-icon>
+                <span> Login</span>
+            </mat-list-item>
+
+        </mat-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+</div>
+
+  <app-footer></app-footer>
+  </mat-drawer-container>
+

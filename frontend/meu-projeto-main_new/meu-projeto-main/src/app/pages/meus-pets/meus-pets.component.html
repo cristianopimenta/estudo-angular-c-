@@ -1,0 +1,56 @@
+<div class="container">
+    <form>
+        <div>
+            <label>Id</label>
+            <input type="text" ngModel="pacId" name="id">
+        </div>
+
+        <div>
+            <label>Nome</label>
+            <input type="text" ngModel="nome" name="nome">
+        </div>
+
+        <div>
+            <label>Peso</label>
+            <input type="text" ngModel="peso" name="peso">
+        </div>
+
+        <div>
+            <label>Raça</label>
+            <input type="text" ngModel="raca" name="raca">
+        </div>
+
+        <div>
+            <label>Raça</label>
+            <input type="text" ngModel="especie" name="especie">
+        </div>
+
+        <div>
+            <label>Sexo</label>
+            <input type="text" ngModel="sexo" name="sexo">
+        </div>
+
+        <button (click)="buttonClick()">
+            {{ id? 'Salvar' : 'Criar' }}
+        </button>
+    </form>
+
+    <table>
+        <thead>
+            <th> Id </th>
+            <th> Nome </th>
+            <th> Peso </th>
+            <th> Sexo </th>
+            <th> ... </th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let paciente of pacientes">
+                <td>{{paciente.pacId}}</td>
+                <td>{{paciente.nome}}</td>
+                <td>{{paciente.raca}}</td>
+                <td>{{paciente.sexo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

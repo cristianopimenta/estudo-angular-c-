@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Seus cabeçalhos, links para CSS e outros elementos do cabeçalho vão aqui -->
+    <script>
+      function previewImage() {
+          var fileInput = document.getElementById('petImage');
+          var imgPreview = document.getElementById('imgPreview');
+
+          fileInput.addEventListener('change', function() {
+              var file = fileInput.files[0];
+              var reader = new FileReader();
+
+              reader.addEventListener('load', function() {
+                  imgPreview.src = reader.result;
+              }, false);
+
+              if (file) {
+                  reader.readAsDataURL(file);
+              }
+          }, false);
+      }
+  </script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+
+          <form>
+            <img src="assets/login1.jpg" alt="Imagem do logo">
+            <br><h1>DADOS PET</h1><br>
+            <h3>Nome: <input name="userAPP" placeholder = "Nome Pet" matInput>  Data Nascimento: <input name="userAPP" placeholder = "Data Nascimento" matInput type="date"></h3>
+            <h3>Peso: <input name="userAPP" placeholder = "kg" matInput>  Raça: <input name="userAPP" placeholder = "Raça" matInput></h3>
+
+            <fieldset>
+
+              <div class="radio">
+                <input type="radio" id="sex" name="sex" value="sex" checked />
+                <label for="sex">Macho</label>
+              </div>
+
+              <div class="radio">
+                <input type="radio" id="sex" name="sex" value="sex" />
+                <label for="sex">Fêmea</label>
+              </div>
+
+            </fieldset>
+
+            <label for="petImage">Imagem do Pet:  </label>
+            <input type="file" id="petImage" name="petImage" accept="image/*">
+            <br><img id="imgPreview" src=" " alt="Preview da imagem" style="max-width: 200px; max-height: 200px;">
+          </form>
+        </div>
+            <br><button class="btn btn-secondary1">VOLTAR</button>
+            <button class="btn btn-secondary2">SALVAR</button>
+        </div>
+
+</body>
+</html>
+

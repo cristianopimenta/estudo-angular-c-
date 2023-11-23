@@ -1,0 +1,24 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content:flex-end;
+  font-size: small;
+}
+
+.footer span {
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.footer .copyright {
+  font-size: small;
+  justify-content: flex-end;
+  padding-left: 15px;
+}
+
+.footer .texto {
+  font-size: medium;
+}
+

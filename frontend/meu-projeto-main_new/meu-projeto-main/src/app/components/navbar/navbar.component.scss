@@ -1,0 +1,19 @@
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: deepskyblue;
+  }
+
+  .header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .header .logo {
+    max-height: 40px;
+  }
+
+  .header .titulo {
+    padding-left: 25px;
+  }

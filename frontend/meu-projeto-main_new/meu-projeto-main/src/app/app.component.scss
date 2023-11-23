@@ -1,0 +1,62 @@
+.example-container {
+    width: 100%;
+    height:95%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    top: 0%;
+    left: 0%;
+    justify-content: flex-start;
+    :hover {
+      background-color: GhostWhite
+    }
+  }
+
+  .example-sidenav {
+    padding: 25px;
+    position: absolute;
+    display: block;
+    justify-content: flex-start;
+  }
+
+  .no-bullets {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .vertical-menu ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .vertical-menu ul li button {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item {
+    margin-left: 20px; /* Ajuste o espaçamento entre o ícone e o texto conforme necessário */
+  }
+
+  .menu-item mat-icon {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+  }
+
+  .menu-button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    top: 0%;
+    left: 0%;
+}
+
+.submenu-icon {
+  vertical-align: text-bottom;
+}
+
+.mat-icon {
+  vertical-align: text-bottom;
+}
