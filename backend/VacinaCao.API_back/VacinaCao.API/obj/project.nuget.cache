@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E0X0qNORAMw7mAZksz3XzBAOO2VtK+LOLapfGnK+f0zoLKwTakKGrYy0Sp27ENe2RL4CVqlgx0EZAM97V9FyNw==",
+  "dgSpecHash": "J3HEL0r/jsB6PJjVmYEnxmThOsnwNZeRLDF97g9m5vqVrTu43GNkT+SZp93cPgOMeoz9MS0tw/YQtTUjUKY/yg==",
   "success": true,
-  "projectFilePath": "D:\\projetos\\c#\\APIVacinacao\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj",
+  "projectFilePath": "D:\\projetos\\c#\\pets-angular-amanda\\backend\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cristiano\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Cristiano\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -62,3 +62,4 @@ export class AppComponent {
         .subscribe(_ => this.obterPetsCadastradas());
     }
   }
+  

@@ -48,6 +48,7 @@ namespace VacinaCao.API.Controllers
             dbPacientes.Peso = paciente.Peso;
             dbPacientes.Especie = paciente.Especie;
             dbPacientes.Data_Nascimento = paciente.Data_Nascimento;
+            dbPacientes.Sexo = paciente.Sexo;
 
             await _paciente.SaveChangesAsync();
             return Ok(new

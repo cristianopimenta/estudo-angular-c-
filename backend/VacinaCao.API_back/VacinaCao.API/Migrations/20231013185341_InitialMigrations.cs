@@ -31,17 +31,13 @@ namespace VacinaCao.API.Migrations
                 name: "Pacientes",
                 columns: table => new
                 {
-                    PacId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PacId = table.Column<int>(type: "int", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Data_Nascimento = table.Column<DateTime>(type: "datetime2", nullable: false),                    
-                    Peso = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Data_Nascimento = table.Column<string>(type: "nvarchar(max)", nullable: false),                    
+                    Peso = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Raca = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Especie = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pacientes", x => x.PacId);
-                   
+                    Especie = table.Column<int>(type: "nvarchar(max)", nullable: false),
+                    Sexo = table.Column<int>(type: "nvarchar(max)", nullable: false)
                 });
 
             migrationBuilder.CreateTable(
@@ -59,10 +55,7 @@ namespace VacinaCao.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tutores", x => x.TutorId);
-                    table.ForeignKey(
-                       name: "FK_Tutor_Pacientes", column: x => x.PacId,
-                       principalTable: "Pacientes", principalColumn: "PacId", onDelete: ReferentialAction.Cascade
-                   );
+                    
                 });
 
             migrationBuilder.CreateTable(
@@ -78,15 +71,12 @@ namespace VacinaCao.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vacinacao", x => x.Id_Vacinacao);
-                    table.ForeignKey(
-                       name: "FK_Vacinacao_Pacientes", column: x => x.PacId,
-                       principalTable: "Pacientes", principalColumn: "PacId", onDelete: ReferentialAction.Cascade
-                   );
-                    table.ForeignKey(
-                       name: "FK_Vacinacao_Estoque", column: x => x.VaciId,
-                       principalTable: "Estoque_Vacina", principalColumn: "VaciId", onDelete: ReferentialAction.Cascade
-                   );
+
+
                 });
+                    
+                
+            
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

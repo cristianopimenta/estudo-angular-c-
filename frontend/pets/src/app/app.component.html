@@ -43,8 +43,8 @@
       <tbody>
         <tr *ngFor="let estoquevacina of estoquevacinas$ | async">
           <td> {{ estoquevacina.VaciId }} </td>
-          <td> {{ estoquevacina.nome_vacina }} </td>
-          <td> {{ estoquevacina.quantidade }} </td>
+          <td> {{ estoquevacina.Nome_Vacina }} </td>
+          <td> {{ estoquevacina.Quantidade }} </td>
           <td> 
             <span (click)="preencherCampos(estoquevacina)" > alterar </span> 
             <span (click)="remover(estoquevacina.VaciId!)" > remover </span> 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projetos\\c#\\APIVacinacao\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj": {}
+    "D:\\projetos\\c#\\pets-angular-amanda\\backend\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj": {}
   },
   "projects": {
-    "D:\\projetos\\c#\\APIVacinacao\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj": {
+    "D:\\projetos\\c#\\pets-angular-amanda\\backend\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projetos\\c#\\APIVacinacao\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj",
+        "projectUniqueName": "D:\\projetos\\c#\\pets-angular-amanda\\backend\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj",
         "projectName": "VacinaCao.API",
-        "projectPath": "D:\\projetos\\c#\\APIVacinacao\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj",
+        "projectPath": "D:\\projetos\\c#\\pets-angular-amanda\\backend\\VacinaCao.API_back\\VacinaCao.API\\VacinaCao.API.csproj",
         "packagesPath": "C:\\Users\\Cristiano\\.nuget\\packages\\",
-        "outputPath": "D:\\projetos\\c#\\APIVacinacao\\VacinaCao.API_back\\VacinaCao.API\\obj\\",
+        "outputPath": "D:\\projetos\\c#\\pets-angular-amanda\\backend\\VacinaCao.API_back\\VacinaCao.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

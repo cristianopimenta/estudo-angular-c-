@@ -9,18 +9,19 @@ namespace VacinaCao.API.Models
     {
 
         [Key]
-        public Guid PacId { get; set; }
+        public int PacId { get; set; }
 
         public string Nome { get; set; }
 
-        public DateTime Data_Nascimento { get; set; }
+        public string Data_Nascimento { get; set; }
 
-        [Precision(18,2)]
-        public decimal Peso { get; set; }
+        
+        public string Peso { get; set; }
 
         public string Raca { get; set; }
 
-        public EspecieClients Especie { get; set; }
+        public string Especie { get; set; }
+        public string Sexo { get; set; }
 
 
     }
