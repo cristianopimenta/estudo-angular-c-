@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.development';
 import { PacienteCadastrar } from '../models/model.pacientes';
 import {Observable} from 'rxjs';
 import { Pacientes } from '../models/model.pacientes';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -14,12 +15,12 @@ import { Pacientes } from '../models/model.pacientes';
 export class MeusPetsComponent {
   title = 'Listar meus Pacientes Pets';
 
-  //paciente: Pacientes[] = [];
+ // paciente: Pacientes[] = [];
   paciente = new Observable<Pacientes[]>();
 
   //form
   id = '';
-  nome = '';
+  nome = 'teste';
   peso = '';
   data = '';
   sexo = '';
@@ -49,23 +50,23 @@ export class MeusPetsComponent {
       return;
     }
 
-    this.backend.cadastrarPaciente({PacId: parseInt(this.id), Nome: this.nome, Data_Nascimento: this.data, Peso: this.peso, Raca: this.raca, Sexo: this.sexo, Especie: this.especie })
+    this.backend.cadastrarPaciente({id: parseInt(this.id), nome: this.nome, data_nascimento: this.data, peso: this.peso, raca: this.raca, sexo: this.sexo, especie: this.especie })
       .subscribe(_ => this.obterPetsCadastrados())
   }
 
   atualizar(){
-    this.backend.editarPaciente({PacId: parseInt(this.id), Nome: this.nome, Data_Nascimento: this.data, Peso: this.peso, Raca: this.raca, Sexo: this.sexo, Especie: this.especie })
+    this.backend.editarPaciente({id: parseInt(this.id), nome: this.nome, data_nascimento: this.data, peso: this.peso, raca: this.raca, sexo: this.sexo, especie: this.especie })
     .subscribe(_ => this.obterPetsCadastrados());
   }
 
   preencherCampos(paciente: Pacientes){
-    this.id = paciente.PacId!.toString();
-    this.nome = paciente.Nome;
-    this.peso = paciente.Peso;
-    this.raca = paciente.Raca;
-    this.especie = paciente.Especie;
-    this.sexo = paciente.Sexo;
-    this.data = paciente.Data_Nascimento;
+    this.id = paciente.id!.toString();
+    this.nome = paciente.nome;
+    this.peso = paciente.peso;
+    this.raca = paciente.raca;
+    this.especie = paciente.especie;
+    this.sexo = paciente.sexo;
+    this.data = paciente.data_nascimento;
   }
 
   remover(id: number){

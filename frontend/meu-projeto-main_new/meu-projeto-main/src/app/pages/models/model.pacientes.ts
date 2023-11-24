@@ -1,12 +1,12 @@
 export interface Pacientes {
 
-    PacId?: number,
-    Nome: string,
-    Data_Nascimento: string,
-    Peso: string
-    Raca: string,
-    Especie: string,
-    Sexo: string
+    id?: number,
+    nome: string,
+    data_nascimento: string,
+    peso: string
+    raca: string,
+    especie: string,
+    sexo: string
 
 }
 

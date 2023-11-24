@@ -26,7 +26,7 @@ export class BackendService {
     }
   
     editarPaciente(paciente: Pacientes) {
-      return this.httpClient.put<Pacientes>(`${this.url}/${paciente.PacId}`, paciente);
+      return this.httpClient.put<Pacientes>(`${this.url}/${paciente.id}`, paciente);
     }
   
     remover(id: number) {

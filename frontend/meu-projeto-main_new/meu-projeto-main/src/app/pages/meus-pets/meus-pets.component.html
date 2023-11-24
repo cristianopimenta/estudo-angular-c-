@@ -2,32 +2,37 @@
     <form>
         <div>
             <label>Id</label>
-            <input type="text" ngModel="pacId" name="id">
+            <input type="text" name="id" ngModel="id" >
         </div>
 
         <div>
             <label>Nome</label>
-            <input type="text" ngModel="nome" name="nome">
+            <input type="text" name="nome" ngModel="nome" >
         </div>
 
         <div>
             <label>Peso</label>
-            <input type="text" ngModel="peso" name="peso">
+            <input type="text" name="peso" ngModel="peso" >
         </div>
 
         <div>
             <label>Raça</label>
-            <input type="text" ngModel="raca" name="raca">
+            <input type="text" name="raca" ngModel="raca" >
         </div>
 
         <div>
             <label>Raça</label>
-            <input type="text" ngModel="especie" name="especie">
+            <input type="text" name="especie" ngModel="especie" >
         </div>
 
         <div>
             <label>Sexo</label>
-            <input type="text" ngModel="sexo" name="sexo">
+            <input type="text" name="sexo" ngModel="sexo">
+        </div>
+
+        <div>
+            <label>Sexo</label>
+            <input type="text" name="data" ngModel="data">
         </div>
 
         <button (click)="buttonClick()">
@@ -46,7 +51,7 @@
 
         <tbody>
             <tr *ngFor="let paciente of pacientes">
-                <td>{{paciente.pacId}}</td>
+                <td>{{paciente.id}}</td>
                 <td>{{paciente.nome}}</td>
                 <td>{{paciente.raca}}</td>
                 <td>{{paciente.sexo}}</td>
