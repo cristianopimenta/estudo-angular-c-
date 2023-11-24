@@ -1,8 +1,8 @@
-export interface Pacientes {
+export type Paciente = {
 
-    id?: number,
+    id: number,
     nome: string,
-    data_nascimento: string,
+    data: string,
     peso: string
     raca: string,
     especie: string,
@@ -10,4 +10,4 @@ export interface Pacientes {
 
 }
 
-export type PacienteCadastrar = Omit<Pacientes, 'PacId'>;
+export type PacienteCadastrar = Omit<Paciente, 'id'>;

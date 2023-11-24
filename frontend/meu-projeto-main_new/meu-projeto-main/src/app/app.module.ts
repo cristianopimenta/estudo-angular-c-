@@ -24,6 +24,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgFor } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { MeusPetsComponent } from './pages/meus-pets/meus-pets.component';
+
 
 
 @NgModule({
@@ -35,10 +37,16 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LoginComponent,
     AgendamentoComponent,
+    MeusPetsComponent
+    
     
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserModule, 
+    AppRoutingModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -47,15 +55,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule,
-    FormsModule,
+    MatInputModule,    
     MatToolbarModule,
     MatCheckboxModule,
     MatNativeDateModule,
     MatDatepickerModule,
     NgFor,
     MatSelectModule,
-    HttpClientModule,
+
+   
 
 
   ],

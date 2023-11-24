@@ -1,38 +1,38 @@
 <div class="container">
     <form>
         <div>
-            <label>Id</label>
-            <input type="text" name="id" ngModel="id" >
+            <label>Id: </label>
+            <input type="text" disabled [(ngModel)]="id" name="id" >
         </div>
 
         <div>
-            <label>Nome</label>
-            <input type="text" name="nome" ngModel="nome" >
+            <label>Nome: </label>
+            <input type="text" name="nome" [(ngModel)]="nome" >
         </div>
 
         <div>
-            <label>Peso</label>
-            <input type="text" name="peso" ngModel="peso" >
+            <label>Peso: </label>
+            <input type="text" name="peso" [(ngModel)]="peso" >
         </div>
 
         <div>
-            <label>Raça</label>
-            <input type="text" name="raca" ngModel="raca" >
+            <label>Raça: </label>
+            <input type="text" name="raca" [(ngModel)]="raca" >
         </div>
 
         <div>
-            <label>Raça</label>
-            <input type="text" name="especie" ngModel="especie" >
+            <label>Especie: </label>
+            <input type="text" name="especie" [(ngModel)]="especie" >
         </div>
 
         <div>
-            <label>Sexo</label>
-            <input type="text" name="sexo" ngModel="sexo">
+            <label>Sexo: </label>
+            <input type="text" name="sexo" [(ngModel)]="sexo">
         </div>
 
         <div>
-            <label>Sexo</label>
-            <input type="text" name="data" ngModel="data">
+            <label>Data Nascimento: </label>
+            <input type="text" name="data" [(ngModel)]="data">
         </div>
 
         <button (click)="buttonClick()">
@@ -50,11 +50,15 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let paciente of pacientes">
-                <td>{{paciente.id}}</td>
-                <td>{{paciente.nome}}</td>
-                <td>{{paciente.raca}}</td>
-                <td>{{paciente.sexo}}</td>
+            <tr *ngFor="let pac of paciente$ | async">
+                <td>{{pac.id}}</td>
+                <td>{{pac.nome}}</td>
+                <td>{{pac.peso}}</td>
+                <td>{{pac.sexo}}</td>
+                <td>
+                    <span (click)="preencherCampos(pac)" > alterar </span> 
+                    <span (click)="remover(pac.id!)" > remover </span> 
+                </td>
             </tr>
         </tbody>
     </table>

@@ -1,9 +1,10 @@
 // backend.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Pacientes } from '../pages/models/model.pacientes';
+import { Paciente, PacienteCadastrar } from '../pages/models/model.pacientes';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,21 +13,33 @@ import { Pacientes } from '../pages/models/model.pacientes';
 
 export class BackendService {
 
-    private url = `${environment.api}/Pacientes`;
+    private url = `${environment.api}/pacientes`;
   
     //injeção de dependencia
     constructor(private httpClient: HttpClient) { }
   
-    buscarTodosPacientes() {
-      return this.httpClient.get<Pacientes[]>(this.url);
+    obterPacientes() {
+      return this.httpClient.get<Paciente[]>(this.url).pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('Erro na solicitação HTTP:', error);
+          // Trate o erro como necessário, por exemplo, retorne um array vazio
+          return ([]);
+        })
+      );
     }
   
-    cadastrarPaciente(paciente: Pacientes) {
-      return this.httpClient.post<Pacientes>(this.url, paciente);
+    cadastrarPaciente(paciente: PacienteCadastrar) {
+      return this.httpClient.post<Paciente>(this.url, paciente).pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('Erro na solicitação HTTP:', error);
+          // Trate o erro como necessário, por exemplo, retorne um array vazio
+          return ([]);
+        })
+      );
     }
   
-    editarPaciente(paciente: Pacientes) {
-      return this.httpClient.put<Pacientes>(`${this.url}/${paciente.id}`, paciente);
+    editarPaciente(paciente: Paciente) {
+      return this.httpClient.put<Paciente>(`${this.url}/${paciente.id}`, paciente);
     }
   
     remover(id: number) {

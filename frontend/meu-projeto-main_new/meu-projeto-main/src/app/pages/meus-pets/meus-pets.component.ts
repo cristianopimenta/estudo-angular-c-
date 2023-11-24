@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { BackendService } from 'src/app/services/backend.service';
 import { environment } from 'src/environments/environment.development';
-import { PacienteCadastrar } from '../models/model.pacientes';
 import {Observable} from 'rxjs';
-import { Pacientes } from '../models/model.pacientes';
-import { FormsModule } from '@angular/forms';
+import { Paciente } from '../models/model.pacientes';
+import { catchError } from 'rxjs/operators';
 
 
 @Component({
@@ -12,15 +11,19 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './meus-pets.component.html',
   styleUrls: ['./meus-pets.component.scss']
 })
-export class MeusPetsComponent {
-  title = 'Listar meus Pacientes Pets';
 
- // paciente: Pacientes[] = [];
-  paciente = new Observable<Pacientes[]>();
+export class MeusPetsComponent {
+postar() {
+throw new Error('Method not implemented.');
+}
+  title = 'Listar meus Pacientes Pets';
+  
+  paciente$ = new Observable<Paciente[]>();
+ 
 
   //form
   id = '';
-  nome = 'teste';
+  nome = 'Novo Registro';
   peso = '';
   data = '';
   sexo = '';
@@ -30,19 +33,16 @@ export class MeusPetsComponent {
 
   constructor(private backend: BackendService) {
 
-    console.log('Oieee', environment.api)
+    //console.log('Minha API', environment.api)
     this.obterPetsCadastrados();
   }
 
-  obterPetsCadastrados() {
-    //this.backend.buscarTodosPacientes().subscribe(paciente => this.paciente = paciente)
-
-    this.paciente = this.backend.buscarTodosPacientes();
-
+  obterPetsCadastrados() { 
+    this.paciente$ = this.backend.obterPacientes();
   }
 
   buttonClick(){
-    if (!this.nome || !this.id)
+    if (!this.nome)
       return;
 
     if (this.id) {
@@ -50,23 +50,23 @@ export class MeusPetsComponent {
       return;
     }
 
-    this.backend.cadastrarPaciente({id: parseInt(this.id), nome: this.nome, data_nascimento: this.data, peso: this.peso, raca: this.raca, sexo: this.sexo, especie: this.especie })
+    this.backend.cadastrarPaciente({nome: this.nome, data: this.data, peso: this.peso, raca: this.raca, sexo: this.sexo, especie: this.especie })
       .subscribe(_ => this.obterPetsCadastrados())
   }
 
   atualizar(){
-    this.backend.editarPaciente({id: parseInt(this.id), nome: this.nome, data_nascimento: this.data, peso: this.peso, raca: this.raca, sexo: this.sexo, especie: this.especie })
+    this.backend.editarPaciente({id: parseInt(this.id), nome: this.nome, data: this.data, peso: this.peso, raca: this.raca, sexo: this.sexo, especie: this.especie })
     .subscribe(_ => this.obterPetsCadastrados());
   }
 
-  preencherCampos(paciente: Pacientes){
+  preencherCampos(paciente: Paciente){
     this.id = paciente.id!.toString();
     this.nome = paciente.nome;
     this.peso = paciente.peso;
     this.raca = paciente.raca;
     this.especie = paciente.especie;
     this.sexo = paciente.sexo;
-    this.data = paciente.data_nascimento;
+    this.data = paciente.data;
   }
 
   remover(id: number){
