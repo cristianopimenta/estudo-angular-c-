@@ -1,0 +1,34 @@
+{
+    "pacientes": [
+      {
+        "PacId": 1,
+        "Nome": "Fredo",
+        "Raca": "Maltes",
+        "Sexo":"M",
+        "Especie": "cachorro",
+        "Data_Nascimento":"07/04/2019",
+        "Peso": "10"
+
+      },
+      {
+        "PacId": 2,
+        "Nome": "Filo",
+        "Raca": "Maltes",
+        "Sexo":"M",
+        "Especie": "cachorro",
+        "Data_Nascimento":"07/04/2019",
+        "Peso": "10"
+
+      },
+      {
+        "PacId": 3,
+        "Nome": "Fredo",
+        "Raca": "Maltes",
+        "Sexo":"M",
+        "Especie": "cachorro",
+        "Data_Nascimento":"07/04/2019",
+        "Peso": "10"
+
+      }
+          ]
+  }
